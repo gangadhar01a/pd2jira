@@ -9,7 +9,7 @@ $jira_username = getenv('pagerDuty');
 $jira_password = getenv('Ganesha.123');
 $jira_project = getenv('Data Services');
 $jira_issue_type = getenv('Problem');
-$pd_subdomain = getenv('hautelook');
+$pd_subdomain = getenv('hautelook.pagerduty');
 $pd_api_token = getenv('scMD8JXN-AhDES227M1r');
 
 if ($messages) foreach ($messages->messages as $webhook) {
