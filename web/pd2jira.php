@@ -1,16 +1,16 @@
 <?php
 $messages = json_decode(file_get_contents("php://input"));
 
-$jira_url = getenv('hautelook');
+$jira_url = getenv('JIRA_URL');
 if (substr($jira_url, strlen($jira_url)-1, 1) == "/") {
   $jira_url = substr($jira_url, 0, strlen($jira_url)-1);
 }
-$jira_username = getenv('pagerDuty');
-$jira_password = getenv('Ganesha.123');
-$jira_project = getenv('Data Services');
-$jira_issue_type = getenv('Problem');
-$pd_subdomain = getenv('hautelook');
-$pd_api_token = getenv('JHz1khAdgdq5Fc2EBG6h');
+$jira_username = getenv('JIRA_USERNAME');
+$jira_password = getenv('JIRA_PASSWORD');
+$jira_project = getenv('JIRA_PROJECT');
+$jira_issue_type = getenv('JIRA_ISSUE_TYPE');
+$pd_subdomain = getenv('PAGERDUTY_SUBDOMAIN');
+$pd_api_token = getenv('PAGERDUTY_API_TOKEN');
 
 if ($messages) foreach ($messages->messages as $webhook) {
   $webhook_type = $webhook->type;
